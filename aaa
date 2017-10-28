@@ -2,8 +2,11 @@
 
 <script>
 var nums = [];
+prime();
 function prime(){
   create();
+  cheak(nums,0);
+  sum(nums,0,0);
 }
 function create(){
   for (var counter = 1; counter <= 25; counter++) {
@@ -18,7 +21,20 @@ function create(){
                   console.log(counter);
       }
   }
-  var nums= [1,2,3,5,7,11,13,17,19,23];
+  function cheak(nums,i){
+var current = [1,2,3,5,7,11,13,17,19,23];
+if (i<nums.length){
+if (nums[i]==current[i])
+{
+cheak(nums,i+1)
+}
+else 
+{
+console.log("ochibka")
+}
+}
+return nums;
+}
   function sum(nums,a,f)
   {
   	if(a<nums.length)
@@ -33,8 +49,7 @@ function create(){
     	return f;
     }
   }
-  sum(nums,0,0);
-
+  
 
 </script>
 
